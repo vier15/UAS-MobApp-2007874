@@ -1,5 +1,7 @@
 package edu.upi.cs.yudiwbs.uas_template;
 
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import edu.upi.cs.yudiwbs.uas_template.databinding.FragmentDuaBinding;
 import edu.upi.cs.yudiwbs.uas_template.databinding.FragmentSatuBinding;
@@ -23,7 +27,9 @@ public class FragmentDua extends Fragment {
     ArrayList<Hasil> alHasil = new ArrayList<>();
     AdapterHasil adapter;
     RecyclerView.LayoutManager lm;
-
+    SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss");
+    private SensorManager sm;
+    private Sensor senAccel;
 
     public FragmentDua() {
         // Required empty public constructor
@@ -38,12 +44,16 @@ public class FragmentDua extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         binding = FragmentDuaBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
@@ -59,7 +69,8 @@ public class FragmentDua extends Fragment {
         binding.buttonFrag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alHasil.add(new Hasil("satu..."));
+                String ts = s.format(new Date());
+                alHasil.add(new Hasil(ts + "\nHP diangkat!"));
                 adapter.notifyDataSetChanged();
             }
         });

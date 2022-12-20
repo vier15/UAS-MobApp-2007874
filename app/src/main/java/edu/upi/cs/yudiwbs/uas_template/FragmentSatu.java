@@ -2,12 +2,16 @@ package edu.upi.cs.yudiwbs.uas_template;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -37,9 +41,26 @@ public class FragmentSatu extends Fragment {
         return fragment;
     }
 
+    private ViewModelFragmentSatu model;
+    private TextView tvAdvice;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        tvAdvice = findViewById(R.id.tvAdvice);
+//        model = new ViewModelProvider(getActivity()).get(ViewModelFragmentSatu.class);
+//
+//        //observer agar bisa update otomatis saat data berubah
+//        final Observer<String> adviceObserver = new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable final String advice) {
+//                tvAdvice.setText(advice);  //set UI jika data berubah
+//            }
+//        };
+//        //daftarkan observer ke variabel livedata, akan dipanggil jika berubah
+//        model.advice.observe(this, adviceObserver);
+
     }
 
     @Override

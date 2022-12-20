@@ -9,14 +9,17 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
     <TextView
         android:id="@+id/tvKeterangan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fragment Satu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Fragment Satu" />
 
     <Button
         android:id="@+id/button"

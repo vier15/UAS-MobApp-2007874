@@ -14,7 +14,7 @@ public class ViewModelFragmentSatu extends ViewModel {
         recViewState.setValue(null);
     }
 
-    public LiveData<Parcelable> getRecViewState() {
+    public MutableLiveData<Parcelable> getRecViewState() {
         return recViewState;
     }
 
